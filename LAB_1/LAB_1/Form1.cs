@@ -32,15 +32,15 @@ namespace LAB_1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You clicked on a Standart button!", "Yaay!");
+            MessageBox.Show("You clicked on a Custom button!", "Yaay!");
             textBox2.Text = "Yaay";
-            this.Text = "You just clicked on a Standart button!";
+            this.Text = "You just clicked on a Custom button!";
             this.BackColor = Color.Azure;
         }
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            if (this.Width < 560)
+            if (this.Width <= 560)
             {
                 label2.Top = button1.Top + 30;
                 label2.Left = button1.Left;
@@ -51,7 +51,6 @@ namespace LAB_1
                 button2.Top = textBox2.Top + 30;
                 button2.Left = button1.Left;
             }
-
             if (this.Width > 560)
             {
                 label2.Top = label1.Top;
@@ -64,5 +63,41 @@ namespace LAB_1
                 button2.Left = 330;
             }
         }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                case 'x':
+                    this.Close();
+                    break;
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.Right:
+                    this.Left = this.Left + 10;
+                    break;
+                case Keys.Left:
+                    this.Left = this.Left - 10;
+                    break;
+                case Keys.Up:
+                    this.Top = this.Top - 10;
+                    break;
+                case Keys.Down:
+                    this.Top = this.Top + 10;
+                    break;
+            }
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            this.BackColor = Color.FromArgb((byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
+        }
+
     }
 }
