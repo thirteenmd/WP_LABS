@@ -41,9 +41,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(81, 47);
+            this.button1.Location = new System.Drawing.Point(140, 60);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(162, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "Show Message";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             this.changeSizeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(473, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,9 +84,9 @@
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(0, 236);
+            this.hScrollBar1.Location = new System.Drawing.Point(78, 134);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(284, 17);
+            this.hScrollBar1.Size = new System.Drawing.Size(286, 17);
             this.hScrollBar1.TabIndex = 2;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
@@ -98,9 +98,9 @@
             "Down",
             "Left",
             "Right"});
-            this.listBox1.Location = new System.Drawing.Point(12, 93);
+            this.listBox1.Location = new System.Drawing.Point(12, 190);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(260, 95);
+            this.listBox1.Size = new System.Drawing.Size(449, 199);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -108,7 +108,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(473, 403);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.button1);

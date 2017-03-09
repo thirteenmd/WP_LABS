@@ -20,8 +20,6 @@ namespace LAB_2
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Cross;
-            this.MaximumSize = new Size(300, 300);
-            this.MinimumSize = new Size(300, 300);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,5 +82,6 @@ namespace LAB_2
                 this.Close();
             }
         }
+
     }
 }
