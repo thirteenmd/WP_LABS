@@ -20,11 +20,13 @@ namespace LAB_2
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Cross;
+            this.MaximumSize = new Size(300, 300);
+            this.MinimumSize = new Size(300, 300);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You clicked on a Standart button!", "Yay!");
+            MessageBox.Show("You clicked on a button!", "Yay!");
         }
 
         private void changeColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +50,26 @@ namespace LAB_2
         {
             Random random = new Random();
             button1.BackColor = Color.FromArgb((byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int choise = listBox1.SelectedIndex;
+            switch (choise)
+            {
+                case 0:
+                    this.Top -= 10;
+                    break;
+                case 1:
+                    this.Top += 10;
+                    break;
+                case 2:
+                    this.Left -= 10;
+                    break;
+                case 3:
+                    this.Left += 10;
+                    break;
+            }
         }
     }
 }
