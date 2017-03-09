@@ -43,5 +43,11 @@ namespace LAB_2
             Random random = new Random();
             this.Size = new Size((int)random.Next(100,400),(int)random.Next(100,400));
         }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            Random random = new Random();
+            button1.BackColor = Color.FromArgb((byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,11 +80,20 @@
             this.changeSizeToolStripMenuItem.Text = "Change Size";
             this.changeSizeToolStripMenuItem.Click += new System.EventHandler(this.changeSizeToolStripMenuItem_Click);
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(0, 236);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(284, 17);
+            this.hScrollBar1.TabIndex = 2;
+            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -104,6 +114,7 @@
         private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeSizeToolStripMenuItem;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }
 
