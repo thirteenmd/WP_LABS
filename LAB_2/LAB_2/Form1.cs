@@ -71,5 +71,18 @@ namespace LAB_2
                     break;
             }
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.U)
+            {
+                this.Top = 0;
+                this.Left = 0;
+            }
+            if (e.Control && e.KeyCode == Keys.X)
+            {
+                this.Close();
+            }
+        }
     }
 }
