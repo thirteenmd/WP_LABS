@@ -82,6 +82,5 @@ namespace LAB_2
                 this.Close();
             }
         }
-
     }
 }
