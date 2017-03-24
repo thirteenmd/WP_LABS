@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace LAB_3
 {
@@ -111,7 +112,20 @@ namespace LAB_3
 
         private void button4_Click(object sender, EventArgs e)
         {
+            drawArea.Clear(Color.White);
 
+            Bitmap flag = new Bitmap(200, 100);
+            Graphics flagGraphics = Graphics.FromImage(flag);
+            int red = 0;
+            int white = 11;
+            while (white <= 100)
+            {
+                flagGraphics.FillRectangle(Brushes.Aquamarine, 0, red, 200, 10);
+                flagGraphics.FillRectangle(Brushes.BlueViolet, 0, white, 200, 10);
+                red += 20;
+                white += 20;
+            }
+            pictureBox1.Image = flag;
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -148,6 +162,22 @@ namespace LAB_3
                 drawArea.DrawRectangle(grayPen, commonRect);
                 drawArea.DrawEllipse(greenPen, commonRect);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            drawArea.Clear(Color.White);
+
+            LinearGradientBrush linGrBrush = new LinearGradientBrush(
+            new Point(0, 10),
+            new Point(200, 10),
+            Color.FromArgb(255, 56, 0, 14), 
+            Color.FromArgb(255, 213, 54, 25));  
+
+            Pen pen = new Pen(linGrBrush);
+
+            drawArea.FillEllipse(linGrBrush, 0, 30, 200, 100);
+            drawArea.FillRectangle(linGrBrush, 30, 150, 150, 30);
         }
     }
 }
