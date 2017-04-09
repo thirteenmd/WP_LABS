@@ -13,11 +13,14 @@ namespace LAB_3
 {
     public partial class Form1 : Form
     {
-        Graphics drawArea;
+        Graphics drawArea, canvas;
+        public List<Point> pointsForBezier = new List<Point>();
+
         public Form1()
         {
             InitializeComponent();
             drawArea = pictureBox1.CreateGraphics();
+            canvas = pictureBox2.CreateGraphics();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -135,6 +138,7 @@ namespace LAB_3
                 drawArea.Clear(Color.White);
             }
         }
+
         public int xInit = 0, yInit = 0;
         public int xFinal = 0, yFinal = 0;
 
@@ -178,6 +182,57 @@ namespace LAB_3
 
             drawArea.FillEllipse(linGrBrush, 0, 30, 200, 100);
             drawArea.FillRectangle(linGrBrush, 30, 150, 150, 30);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            //pointsForBezier.Add(new Point(e.X, e.Y));
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            pointsForBezier.Add(new Point(e.X, e.Y));
+            
+            Point[] points = pointsForBezier.ToArray();
+            Pen redPen = new Pen(Color.Red, 1);
+
+            canvas.DrawBeziers(redPen, points);
+
+            if (pointsForBezier.Count >= 4)
+            {
+                pointsForBezier = new List<Point>();
+            }
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            canvas.Clear(Color.White);
+            pointsForBezier.Add(new Point(e.X, e.Y));
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode == Keys.I)
+            {
+                drawArea.ScaleTransform(150, 100);
+            }
         }
     }
 }
